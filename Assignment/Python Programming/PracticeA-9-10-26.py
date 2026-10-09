@@ -9,8 +9,6 @@ for num in range(1, 11):
 # 2. create a heterogeneous list of numbers and names. Split the list from highest numbers
 
 heterogeneous_list = [1, "Ajay", 2, 3, 5, "Seema", "Anita"]
-heterogeneous_list.append("Prasad")
-heterogeneous_list[3:3] = [6, 7]
 numbers = [x for x in heterogeneous_list if isinstance(x, (int, float))]
 highest_num = max(numbers)
 split_index = heterogeneous_list.index(highest_num)
