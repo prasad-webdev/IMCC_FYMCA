@@ -24,12 +24,11 @@ else:
 
 # 4. print the sum of digits
 num = int(input("Enter a number: "))
-temp = num
 total = 0
-while temp > 0:
-    digit = temp % 10
+while num > 0:
+    digit = num % 10
     total = total + digit
-    temp = temp // 10
+    num = num // 10
 print(total)
 
 
@@ -38,7 +37,7 @@ print(total)
 # ##
 # ***
 
-n = 3
+n = int(input("Enter the number of rows for the pattern: "))
 for i in range(1, n + 1):
     if i % 2 != 0:
         print("*" * i)
