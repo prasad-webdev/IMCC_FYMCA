@@ -8,10 +8,16 @@ for num in range(1, 11):
 
 # 2. create a heterogeneous list of numbers and names. Split the list from highest numbers
 
-heterogeneous_list = [10, "Alice", 25, "Bob", 5, "Charlie", 30, "David"]
+heterogeneous_list = [1, "Ajay", 2, 3, 5, "Seema", "Anita"]
+heterogeneous_list.append("Prasad")
+heterogeneous_list.insert(3, (6, 7))
 numbers = [x for x in heterogeneous_list if isinstance(x, (int, float))]
-numbers.sort(reverse=True)
-print("Numbers in descending order:", numbers)
+highest_num = max(numbers)
+split_index = heterogeneous_list.index(highest_num)
+part1 = heterogeneous_list[:split_index]
+part2 = heterogeneous_list[split_index:]
+print(part1, part2)
+
 
 # 3. accept the name and check if its palindrome.
 
@@ -44,3 +50,4 @@ for i in range(1, n + 1):
     else:
         print("#" * i)
 
+# 6. add the two numbers at third position of the list and append one name in the list and split.
