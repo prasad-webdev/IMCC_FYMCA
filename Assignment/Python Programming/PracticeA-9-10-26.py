@@ -53,7 +53,7 @@ for i in range(1, n + 1):
 # 6. add the two numbers at third position of the list and append one name in the list and split.
 heterogeneous_list = [1, "Ajay", 2, 3, 5, "Seema", "Anita"]
 heterogeneous_list.append("Prasad")
-heterogeneous_list[3:3] = [6, 7]
+heterogeneous_list[:3] = [6, 7]
 numbers = [x for x in heterogeneous_list if isinstance(x, (int, float))]
 highest_num = max(numbers)
 split_index = heterogeneous_list.index(highest_num)
