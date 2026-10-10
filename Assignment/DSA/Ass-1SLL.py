@@ -67,7 +67,7 @@ class LinkedList:
         new_node.next = temp.next
         temp.next = new_node
 
-    # 4. Find middle node and print its value (Two-pointer / Tortoise & Hare)
+    # 4. Find middle node and print its value 
     def find_middle(self):
         if not self.head:
             print("List is empty")
