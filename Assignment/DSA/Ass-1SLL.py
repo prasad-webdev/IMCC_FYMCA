@@ -44,7 +44,7 @@ class LinkedList:
         print(f"Total number of nodes: {count}")
         print(f"Sum of node values: {total_sum}")
 
-    # 3. Insert node at a specific position (1-based index)
+    # 3. Insert node at a specific position 
     def insert(self, new_node, pos):
         if pos < 1:
             print("Invalid position!")
