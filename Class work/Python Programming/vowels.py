@@ -1,11 +1,11 @@
-# # sentence = input("Enter your string : ")
-# # vowels = "aeiouAEIOU"
-# # count = 0
+sentence = input("Enter your string : ")
+vowels = "aeiouAEIOU"
+count = 0
 
-# # for char in sentence:
-# #     if char in vowels:
-# #         count += 1  
-# # print("Total vowels:", count)
+for char in sentence:
+    if char in vowels:
+        count += 1  
+print("Total vowels:", count)
 
 # txt = 'ha'
 # print(txt*3)

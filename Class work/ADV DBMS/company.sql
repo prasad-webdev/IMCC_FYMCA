@@ -138,3 +138,15 @@ alter table Employee4 add constraint chk_EmpAge_salary
 check(EmpAge > 20 and salary >= 5000);
 
 show create table Employee4;
+
+-- default constraint : set a default value for a column if no other value specified
+
+CREATE TABLE Employee5 (
+    EmpID int NOT NULL,
+    first_name varchar(20) ,
+    last_name varchar(20),
+    EmpDept varchar(10)
+    default 'Operation'
+);
+
+desc Employee4;
