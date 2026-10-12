@@ -93,12 +93,15 @@ class LinkedList:
 
         # 9. Delete alternate nodes (deletes 2nd, 4th, 6th, etc.)
     def delete_alternate(self):
-        if not self.head or not self.head.next:
-            return  
-        curr = self.head
-        while curr and curr.next:
-            curr.next = curr.next.next
-            curr = curr.next
+        prev = self.head
+        temp = self.head.next
+        while prev and temp:
+            prev.next = temp.next
+            temp = None
+            prev = prev.next
+            if prev:
+                temp = prev.next
+
 
     # 5. Delete node by value
     def delete(self, val):
@@ -184,6 +187,7 @@ def solution():
     # 7. Sum of consecutive nodes
     print("\n--- Consecutive Pair Sums ---")
     ll.sum_consecutive_pairs()
+
     # 8. Delete alternate nodes
     print("\n--- Delete Alternate Nodes ---")
     ll.delete_alternate()
