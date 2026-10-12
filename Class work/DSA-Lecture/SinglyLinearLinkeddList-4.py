@@ -1,19 +1,12 @@
 # Single Linear Linked List
-# Ass1: Create a Singly Linear Linked List with following operations
-
-# Create Linked List
-# Traverse and print the node values
-# Insert node at a specific position
-# Find Middle node and print its value
-# Delete node
-# Reverse list
-# Calculate the sum of every two consecutive node values.
+# Assignment 1: Operations on Singly Linked List
 
 
 class Node:
     def __init__(self, val):
         self.data = val
         self.next = None
+
 
 class LinkedList:
     def __init__(self):
@@ -44,7 +37,7 @@ class LinkedList:
         print(f"Total number of nodes: {count}")
         print(f"Sum of node values: {total_sum}")
 
-    # 3. Insert node at a specific position 
+    # 3. Insert node at a specific position
     def insert(self, new_node, pos):
         if pos < 1:
             print("Invalid position!")
@@ -67,43 +60,42 @@ class LinkedList:
         new_node.next = temp.next
         temp.next = new_node
 
-    # 4. Find middle node and print its value 
+    # 4. Find middle node and print its value
     def find_middle(self):
-        temp = temp1 = self.head
-        prev = None
-        while temp1 and temp1.next:
-            prev = temp
-            temp = temp.next
-            temp1 = temp1.next.next
-        print("Middle node value:", temp.data)
-        prev.next = temp.next
-        temp = None
+        if not self.head:
+            print("List is empty")
+            return None
 
-    # 8. Delete middle node
+        slow = self.head
+        fast = self.head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        print(f"Middle node value: {slow.data}")
+        return slow.data
+
+    # 5. Delete first and last node
     def delfirst_last(self):
-        temp1 = self.head
-        temp1 = None
+        if not self.head:
+            print("List is empty")
+            return
+        if not self.head.next:
+            self.head = None
+            return
+
+        # Delete first node
+        self.head = self.head.next
+
+        # Traverse to delete the last node
+        temp = self.head
         prev = None
-        temp = self.head = self.head.next
-        while(temp.next):
+        while temp.next:
             prev = temp
             temp = temp.next
         prev.next = None
-        temp = None
 
-        # 9. Delete alternate nodes (deletes 2nd, 4th, 6th, etc.)
-    def delete_alternate(self):
-        prev = self.head
-        temp = self.head.next
-        while prev and temp:
-            prev.next = temp.next
-            temp = None
-            prev = prev.next
-            if prev:
-                temp = prev.next
-
-
-    # 5. Delete node by value
+    # 6. Delete node by value
     def delete(self, val):
         if not self.head:
             print("List is empty")
@@ -124,7 +116,7 @@ class LinkedList:
 
         temp.next = temp.next.next
 
-    # 6. Reverse list in-place
+    # 7. Reverse list in-place
     def reverse(self):
         prev = None
         curr = self.head
@@ -135,7 +127,7 @@ class LinkedList:
             curr = next_node
         self.head = prev
 
-    # 7. Calculate sum of every two consecutive node values
+    # 8. Calculate sum of every two consecutive node values
     def sum_consecutive_pairs(self):
         if not self.head or not self.head.next:
             print("Not enough nodes to form consecutive pairs")
@@ -149,6 +141,29 @@ class LinkedList:
 
         print("Sum of consecutive pairs:", pair_sums)
         return pair_sums
+
+    # 9. Delete alternate nodes (2nd, 4th, 6th, etc.)
+    def delete_alternate(self):
+        if not self.head or not self.head.next:
+            return
+
+        curr = self.head
+        while curr and curr.next:
+            curr.next = curr.next.next
+            curr = curr.next
+
+    # 10. Concatenate another linked list to this list
+    def concatenate(self, list2):
+        if self.head is None:
+            self.head = list2.head
+            return
+        if list2.head is None:
+            return
+
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = list2.head
 
 
 def solution():
@@ -191,6 +206,14 @@ def solution():
     # 8. Delete alternate nodes
     print("\n--- Delete Alternate Nodes ---")
     ll.delete_alternate()
+    ll.print()
+
+    # 9. Concatenate second list
+    print("\n--- Concatenate Another List ---")
+    ll2 = LinkedList()
+    ll2.append(Node(500))
+    ll2.append(Node(600))
+    ll.concatenate(ll2)
     ll.print()
 
 
