@@ -1,0 +1,4 @@
+Python is an easy to learn and powerful programming language.
+It has efficient high-level data structures and simple approaches to object-oriented programming.
+Writing clean code helps in debugging and maintenance.
+Practice makes a student better at coding every day.
