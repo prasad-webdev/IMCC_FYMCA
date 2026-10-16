@@ -21,6 +21,7 @@ select * from customer where custid=3;
 select * from customer where custid in(1,3);
 
 create table clonetable as select * from customer;
+select * from clonetable;
 
 drop table clonetable;
 
@@ -43,6 +44,8 @@ alter table customer add lastname varchar(15);
 set sql_safe_updates=0;
 
 update customer set lastname='deshmukh' where custid=1;
+select * from customer;
+
 
 select concat(custname,' ',lastname) as fullname from customer;
 select substr(custname,1,3) from customer;
