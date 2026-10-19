@@ -52,3 +52,20 @@ select substr(custname,1,3) from customer;
 select substr(custname,0,3) from customer;
 select instr(custname,'a') as position from customer;
 select substr(custname,1,2),instr(custname,'a') from customer;
+
+
+/* Date and time function */
+select now();
+
+select now() as current_datatime;
+
+alter table customer add column data date;
+select * from customer;
+
+
+UPDATE customer SET data = '2026-10-08'  WHERE custid = 1;
+UPDATE customer SET data = '2026-02-05'  WHERE custid = 2;
+UPDATE customer SET data = '2026-03-15'  WHERE custid = 3;
+UPDATE customer SET data = '2026-01-25'  WHERE custid = 4;
+UPDATE customer SET data = '2026-11-01'  WHERE custid = 5;
+
