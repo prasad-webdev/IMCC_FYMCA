@@ -31,4 +31,9 @@ SELECT * FROM employee WHERE role = 'Developer' AND dept = 'IT';
 select * from employee where role = 'Developer' or role = 'IT';
 select * from employee where role = 'Lead' or role = 'IT';
 
+/* IN operator : is is used to determine if a value matches any other value in the list. */
+
+select * from employee where role in('Lead','IT');
+select * from employee where role in('Analyst','Finance');
+
 
