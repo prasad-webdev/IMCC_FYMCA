@@ -20,6 +20,9 @@ SELECT * FROM employee;
 /* the distinct keyword in the select statement is used to eliminates duplicate rows from the result set that may be produced whiie querying data from a table. */
 
 select distinct dept from employee order by dept;
+select distinct role from employee order by role;
 
+/* AND operation is a logical operator that combines two or more boolean expression and returns 1 and  0, or null. the and operator is used for filtering data with where clause */
 
-select distinct
+SELECT * FROM employee WHERE role = 'Developer' AND dept = 'IT';
+
