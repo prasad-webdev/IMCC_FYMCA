@@ -21,13 +21,14 @@ class linked_list :
 
     def insert(self,new_node,pos):
         temp = self.head
-        if pos == 1:
+        if pos <= 1 or self.head is None:
             new_node.next = self.head
-            self.head.prev = new_node
+            if self.head:
+                self.head.prev = new_node
             self.head = new_node
         else:
             p =  1 
-            while(p!= pos - 1 and temp.next) :
+            while p != pos - 1 and temp.next:
                 temp = temp.next
                 p+=1
             new_node.next = temp.next
@@ -49,30 +50,48 @@ class linked_list :
         while temp:
             print(temp.data, end = " ")
             temp = temp.prev
+        print()
             
 
     def delete(self,value):
         temp = self.head
-        if temp.data == value:  #deleting first node
-            self.head = self.head.next
-            self.head.prev = None
+        while temp and temp.data != value:
+            temp = temp.next
 
+        if temp is None:
+            print("Value is not present in the list")
+            return
+
+        if temp.prev is None:  # deleting first node
+            self.head = self.head.next
+            if self.head:
+                self.head.prev = None
         else:
-            while(temp.data != value and temp):
-                temp = temp.next
-                if temp == None:
-                    print("Value is not present in the list")
-                    return
             temp.prev.next = temp.next
-            if temp.next:    # Last Node
+            if temp.next:
                 temp.next.prev = temp.prev
-            temp = None
+
+    def print(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end=" ")
+            temp = temp.next
+        print()
     
 list = linked_list()
 list.append(node(12))
 list.append(node(16))
+list.append(node(20))
+list.append(node(25))
+list.append(node(30))
 list.print()
 list.insert(node(5),1)
 list.insert(node(53),2)
 list.print()
 list.reverse()
+
+list.delete(53)
+list.print()
+
+
+
