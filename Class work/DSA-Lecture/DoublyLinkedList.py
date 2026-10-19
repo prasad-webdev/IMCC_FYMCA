@@ -6,6 +6,8 @@ class node:
 class linked_list :
     def __init__(self):
         self.head = None
+
+
     def append(self, new_node):
         temp =self.head
         if temp:
@@ -15,6 +17,8 @@ class linked_list :
             new_node.prev = temp
         else: #First Node
             self.head = new_node
+
+
     def insert(self,new_node,pos):
         temp = self.head
         if pos == 1:
@@ -32,6 +36,8 @@ class linked_list :
                 temp.next.prev = new_node
             temp.next = new_node
             new_node.prev =temp
+
+
     def reverse(self):
         temp = self.head
         if temp == None:
@@ -43,13 +49,30 @@ class linked_list :
         while temp:
             print(temp.data, end = " ")
             temp = temp.prev
+            
+
+    def delete(self,value):
+        temp = self.head
+        if temp.data == value:  #deleting first node
+            self.head = self.head.next
+            self.head.prev = None
+
+        else:
+            while(temp.data != value and temp):
+                temp = temp.next
+                if temp == None:
+                    print("Value is not present in the list")
+                    return
+            temp.prev.next = temp.next
+            if temp.next:    # Last Node
+                temp.next.prev = temp.prev
+            temp = None
     
 list = linked_list()
 list.append(node(12))
 list.append(node(16))
-# list.print()
+list.print()
 list.insert(node(5),1)
 list.insert(node(53),2)
-
-# list.print()
+list.print()
 list.reverse()
