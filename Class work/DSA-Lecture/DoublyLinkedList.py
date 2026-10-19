@@ -71,6 +71,32 @@ class linked_list :
             if temp.next:
                 temp.next.prev = temp.prev
 
+    # write a function to count occurance of a no in dll
+    def count_occurrences(self, value):
+        count = 0
+        temp = self.head
+        while temp:
+            if temp.data == value:
+                count += 1
+            temp = temp.next
+        return count
+
+    def swap(self):
+        temp = node1 = self.head    #node1 is first node and n
+        while temp.next:
+            temp = temp.next
+    
+        temp.next = node1.next
+        node1.next = None
+        node1.prev = temp.prev
+        temp.prev.next = node1
+        temp.prev = None
+        self.head = temp
+
+
+
+
+
     def print(self):
         temp = self.head
         while temp:
@@ -91,6 +117,11 @@ list.print()
 list.reverse()
 
 list.delete(53)
+list.print()
+list.count_occurrences(30)
+print("Number of occurrences of 30:", list.count_occurrences(30))
+list.insert
+list.swap()
 list.print()
 
 

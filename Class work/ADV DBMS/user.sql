@@ -63,6 +63,8 @@ alter table customer add column data date;
 select * from customer;
 
 
+
+
 UPDATE customer SET data = '2026-10-08'  WHERE custid = 1;
 UPDATE customer SET data = '2026-02-05'  WHERE custid = 2;
 UPDATE customer SET data = '2026-03-15'  WHERE custid = 3;
