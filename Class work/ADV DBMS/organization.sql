@@ -59,3 +59,11 @@ select * from employee where experience = 5 or experience = 10;
 
 select * from employee where last_name like 'P%';
 select * from employee where last_name like 'S%';
+select * from employee where first_name like 'P%';
+
+/* LIMMIT OPERATR : it is in the select statement is used to limit the number of rows returnedd */
+
+select * from employee;
+select * from employee order by experience limit 3;
+
+
