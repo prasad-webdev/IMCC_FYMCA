@@ -36,4 +36,21 @@ select * from employee where role = 'Lead' or role = 'IT';
 select * from employee where role in('Lead','IT');
 select * from employee where role in('Analyst','Finance');
 
+/* NOT IN OPERATOR : is formed by combining the NOT and IN operatoor. it is contrast to the IN operator is used to determine if a value does not match any of the value in the list */
 
+select * from employee where role not in('Analyst','Finance');
+
+
+/* BETWEEN operator : it is a logical operator that deserves that determmines wheter a value belongs in a range. */
+
+alter table employee add column experience int;
+SELECT * FROM employee;
+
+UPDATE employee SET experience = 8  WHERE emp_id = 101;
+UPDATE employee SET experience = 5  WHERE emp_id = 102;
+UPDATE employee SET experience = 10 WHERE emp_id = 103;
+UPDATE employee SET experience = 15 WHERE emp_id = 104;
+UPDATE employee SET experience = 6  WHERE emp_id = 105;
+
+select * from employee where experience between 6 and 10;
+select * from employee where experience = 5 or experience = 10;
