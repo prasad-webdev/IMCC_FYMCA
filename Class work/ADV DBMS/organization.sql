@@ -14,3 +14,12 @@ INSERT INTO employee VALUES (104, 'Pooja', 'Kulkarni', 'F', 'Analyst', 'Finance'
 INSERT INTO employee VALUES (105, 'Rohan', 'More', 'M', 'Tester', 'QA', 'M15');
 
 SELECT * FROM employee;
+
+
+/* select distinct keyword */
+/* the distinct keyword in the select statement is used to eliminates duplicate rows from the result set that may be produced whiie querying data from a table. */
+
+select distinct dept from employee order by dept;
+
+
+select distinct
