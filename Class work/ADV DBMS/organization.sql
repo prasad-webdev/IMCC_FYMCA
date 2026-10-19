@@ -51,6 +51,11 @@ UPDATE employee SET experience = 5  WHERE emp_id = 102;
 UPDATE employee SET experience = 10 WHERE emp_id = 103;
 UPDATE employee SET experience = 15 WHERE emp_id = 104;
 UPDATE employee SET experience = 6  WHERE emp_id = 105;
-
-select * from employee where experience between 6 and 10;
+ 
+select * from employee where experience between 6 and 10;  -- BETWEEN OPERATOR
 select * from employee where experience = 5 or experience = 10;
+
+/* LIKE OPERATOR : it is logical operator that determines whether or not a string contains a specified pattern. */
+
+select * from employee where last_name like 'P%';
+select * from employee where last_name like 'S%';
