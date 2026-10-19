@@ -67,3 +67,12 @@ select * from employee;
 select * from employee order by experience limit 3;
 
 
+/* IS NULL  : this determines whether or nnot a value is null. */
+INSERT INTO employee VALUES (106, 'Asha', 'Joshi', 'F', 'President', 'HR', ' ', NULL);
+INSERT INTO employee (emp_id, first_name, last_name, gender, role, dept)  VALUES (107, 'Vedika', 'Dahale', 'F', 'Lead', 'Finance');
+
+select * from employee where manager_id is null;
+select * from employee where experience is null;
+
+select * from employee where experience is not null;
+
