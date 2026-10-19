@@ -29,6 +29,6 @@ SELECT * FROM employee WHERE role = 'Developer' AND dept = 'IT';
 /* OR operator:it combines two boolean expressions and returns true */
 
 select * from employee where role = 'Developer' or role = 'IT';
-
+select * from employee where role = 'Lead' or role = 'IT';
 
 
