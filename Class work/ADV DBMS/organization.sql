@@ -114,6 +114,14 @@ select role, sum(experience) as total_experience
 from employee group by role
 having total_experience >= 10 and total_experience <= 20;
 
+/* fetch dep wise employee count using having clause and sort the data */
+select dept, count(emp_id)
+from employee
+group by dept
+having count(emp_id) > 1
+order by count(emp_id);
+
+
 
 
 
