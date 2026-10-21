@@ -76,3 +76,12 @@ select * from employee where experience is null;
 
 select * from employee where experience is not null;
 
+
+select count(*) from employee;
+
+select count(emp_id) from employee where dept = 'IT';
+select Min(experience) from employee;
+select Max(experience) from employee;
+select sum(experience) from employee;
+select Avg(experience) as emp_exr from employee;
+
