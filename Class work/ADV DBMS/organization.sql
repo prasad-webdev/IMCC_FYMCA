@@ -87,3 +87,10 @@ select Avg(experience) as emp_exr from employee;
 
 select * from employee;
 
+
+
+/* Group by clause this divides a set of rows into subgroups depending on column or expression values.it is used with aggregate functions such as SUM AVG MAX MIN and COUNT. */
+
+-- find the dept wise employee count
+select dept, count(*) as employee_count from employee group by dept;
+select role, count(*) as employee_count from employee group by role;
