@@ -93,4 +93,10 @@ select * from employee;
 
 -- find the dept wise employee count
 select dept, count(*) as employee_count from employee group by dept;
+
+-- find the role wise employee count
 select role, count(*) as employee_count from employee group by role;
+
+-- find the gender wise employee count
+select gender, count(*) as employee_count from employee group by gender;
+
