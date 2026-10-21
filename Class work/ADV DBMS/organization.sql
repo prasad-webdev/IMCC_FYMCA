@@ -89,7 +89,8 @@ select * from employee;
 
 
 
-/* Group by clause this divides a set of rows into subgroups depending on column or expression values.it is used with aggregate functions such as SUM AVG MAX MIN and COUNT. */
+/* GROUP BY clause : this divides a set of rows into subgroups depending on column or expression values.
+it is used with aggregate functions such as SUM AVG MAX MIN and COUNT. */
 
 -- find the dept wise employee count
 select dept, count(*) as employee_count from employee group by dept;
@@ -99,4 +100,20 @@ select role, count(*) as employee_count from employee group by role;
 
 -- find the gender wise employee count
 select gender, count(*) as employee_count from employee group by gender;
+
+/* HAVING clause : each group produced by the group by clause is evaluated by the HAVING clause, 
+and if the result is true, the row is included in the result set, 
+this was added b'coz the where keyword cannot be used with aggregate functions. */
+
+select * from employee;
+select dept, sum(experience) as total_experience
+from employee group by dept
+having total_experience >= 10 and total_experience <= 20;
+
+select role, sum(experience) as total_experience
+from employee group by role
+having total_experience >= 10 and total_experience <= 20;
+
+
+
 
