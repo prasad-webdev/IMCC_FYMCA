@@ -85,3 +85,5 @@ select Max(experience) from employee;
 select sum(experience) from employee;
 select Avg(experience) as emp_exr from employee;
 
+select * from employee;
+
