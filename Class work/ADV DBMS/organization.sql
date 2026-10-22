@@ -126,6 +126,10 @@ from employee
 group by dept
 having total_experience >=10 or total_experience <= 20;
 
+select *from employee;
+
+
+
 
 
 

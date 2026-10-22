@@ -32,7 +32,7 @@ select * from orders;
 update orders set status = 'Shipped' where order_id = 103;
 savepoint sp2;
 
-rollback to savepoint sp1;
+rollback to savepoint sp2;
 
 delete from orders where order_id = 102;
 savepoint sp3;
