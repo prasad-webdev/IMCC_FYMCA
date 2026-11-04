@@ -1,6 +1,6 @@
 create database user;
 
-use user;
+use usecustomercustidr;
 
 create table customer(custid int,custname varchar(15),city varchar(10),product varchar(15),price int);
 

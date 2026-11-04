@@ -35,7 +35,29 @@
 
 
 
-from module import greet_person
-greet_person("Alice")
+# from module import greet_person
+# greet_person("Alice")
 
 
+# import random 
+# x = random.randint(1, 100)
+# subject = ("Math", "Science", "History", "Geography", "English", "Art", "Music", "Physical Education", "Computer Science", "Economics")
+# mychoice = random.choice(subject)
+# print(mychoice)
+# print(x)
+
+
+# import datetime
+# print(datetime.date.today())
+# print(datetime.datetime.now())
+# print(datetime.timedelta(days=5))
+
+
+
+from datetime import date, timedelta
+now = datetime.now()
+furture_date = now + timedelta(days=10)
+past_date = now - timedelta(hours=5)
+
+print("After 10 days, the date will be", furture_date)
+print("5 hours ago, the date was", past_date)
