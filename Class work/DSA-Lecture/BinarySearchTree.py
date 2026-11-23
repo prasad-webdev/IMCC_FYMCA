@@ -11,6 +11,7 @@ class BST:
         self.root = None
         self.cnt = 0
         self.lcnt = 0
+        self.nlcnt = 0
 
     def insert(self, new_node):
         if self.root is None:  # BST is empty
@@ -39,6 +40,8 @@ class BST:
             print(rt.data, end=" ")
             if rt.left is None and rt.right is None:
                 self.lcnt += 1
+            else:
+                self.nlcnt += 1
             self.cnt += 1
             self.inorder(rt.right)
 
@@ -79,11 +82,13 @@ b1.insert(Node(450))
 b1.insert(Node(0))
 b1.insert(Node(65))
 b1.insert(Node(300))
+b1.insert(Node(500))
 
 print("\nInorder: ")
 b1.inorder(b1.root)
 print("\nNo of nodes: ", b1.cnt)
 print("\nNo of leaf nodes: ", b1.lcnt)
+print("\nNo of non-leaf nodes: ", b1.nlcnt)
 print("\nPreorder: ")
 b1.preorder(b1.root)
 print("\nPostorder: ")
