@@ -68,6 +68,7 @@ class BST:
                 if temp.right:
                     arr.append(temp.right)
             level += 1
+        print("\nHeight of tree: ", level - 1)
         
 
 
