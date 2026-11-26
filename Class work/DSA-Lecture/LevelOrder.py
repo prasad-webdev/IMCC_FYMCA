@@ -11,6 +11,7 @@ class BST:
         self.cnt = 0
         self.lcnt = 0
         self.nlcnt = 0
+    
 
     def insert(self, new_node):
         if self.root is None:  # BST is empty
@@ -52,16 +53,21 @@ class BST:
 
         arr = []
         cnt = 0  #for counting visited nodes
+        level = 0  #for counting levels
         arr.append(rt)
 
         while cnt < len(arr): 
-            temp = arr[cnt]   
-            cnt += 1
-            print(temp.data, end=" ")
-            if temp.left:
-                arr.append(temp.left)
-            if temp.right:
-                arr.append(temp.right)
+            node_count = len(arr) - cnt   #No of nodes to be visited
+            print("\nLevel ", level, ": ", end=" ")
+            for i in range(node_count):
+                temp = arr[cnt]   
+                cnt += 1
+                print(temp.data, end=" ")
+                if temp.left:
+                    arr.append(temp.left)
+                if temp.right:
+                    arr.append(temp.right)
+            level += 1
         
 
 
@@ -76,11 +82,9 @@ b1.insert(Node(500))
 b1.insert(Node(50))
 b1.insert(Node(70))
 
-
 print("\nInorder: ")
 b1.inorder(b1.root)
 
-
-
 print("\nLevel order: ")
 b1.level_order(b1.root)
+
